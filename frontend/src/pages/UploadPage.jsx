@@ -96,7 +96,10 @@ export default function UploadPage({ onLogout, onAnalyzed }) {
       formData.append("job_title", jobTitle);
       formData.append("job_description", jobDesc);
 
-      const res = await fetch("/analyze", { method: "POST", body: formData });
+      const res = await fetch("https://resumate-backend-3bwz.onrender.com/analyze", {
+  method: "POST",
+  body: formData,
+});
       if (!res.ok) throw new Error(`Server error: ${res.status}`);
       const data = await res.json();
       if (data.error) throw new Error(data.error);
