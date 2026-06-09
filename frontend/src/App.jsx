@@ -17,4 +17,4 @@ export default function App() {
       {page === "review" && <ReviewPage data={reviewData} onBack={() => setPage("upload")} />}
     </>
   );
-}
+} 
